@@ -189,6 +189,7 @@ LUALIB_API int luaL_argerror (lua_State *L, int arg, const char *extramsg) {
                         arg, ar.name, extramsg);
 }
 
+
 LUALIB_API int luaL_typeerror (lua_State *L, int arg, const char *tname) {
   const char *msg;
   const char *typearg;  /* name for the type of the actual argument */
