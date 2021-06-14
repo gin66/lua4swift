@@ -80,6 +80,8 @@
 		168D38B01DB9D0AF00087970 /* lvm.c in Sources */ = {isa = PBXBuildFile; fileRef = 944A335C1A475A9C00BF8675 /* lvm.c */; };
 		168D38B11DB9D0AF00087970 /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 944A335E1A475A9C00BF8675 /* lzio.c */; };
 		16C450D71DBA11FA00B3F06C /* LuaSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168D386D1DB9D00A00087970 /* LuaSource.framework */; };
+		1962543126778635007F4F9F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1962542E26778635007F4F9F /* LICENSE */; };
+		1962543326778635007F4F9F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1962543026778635007F4F9F /* README.md */; };
 		941314AC1A5A123C00079EE5 /* ExtraTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941314AB1A5A123C00079EE5 /* ExtraTypes.swift */; };
 		944A33051A475A6400BF8675 /* LuaSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 944A33041A475A6400BF8675 /* LuaSource.h */; };
 		944A33071A475A6400BF8675 /* LuaSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 944A33061A475A6400BF8675 /* LuaSource.m */; };
@@ -178,6 +180,8 @@
 		1680CA581DBA0D3700333F1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		168D386D1DB9D00A00087970 /* LuaSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LuaSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		168D38701DB9D00A00087970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1962542E26778635007F4F9F /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		1962543026778635007F4F9F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		941314AB1A5A123C00079EE5 /* ExtraTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraTypes.swift; sourceTree = "<group>"; };
 		944A33011A475A6400BF8675 /* libLua.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libLua.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		944A33041A475A6400BF8675 /* LuaSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuaSource.h; sourceTree = "<group>"; };
@@ -292,6 +296,8 @@
 		1680CA561DBA0D3700333F1F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				1962542E26778635007F4F9F /* LICENSE */,
+				1962543026778635007F4F9F /* README.md */,
 				944A339C1A475AA800BF8675 /* VirtualMachine.swift */,
 				94C68C9C1A475DAE00C54B88 /* Value.swift */,
 				94C67DE61A58719900B18BC2 /* Number.swift */,
@@ -593,6 +599,7 @@
 					};
 					168D386C1DB9D00A00087970 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 1300;
 						ProvisioningStyle = Automatic;
 					};
 					944A33001A475A6400BF8675 = {
@@ -638,6 +645,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1962543326778635007F4F9F /* README.md in Resources */,
+				1962543126778635007F4F9F /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -851,6 +860,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -874,6 +884,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -884,6 +896,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -906,6 +919,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

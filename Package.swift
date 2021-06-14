@@ -8,6 +8,6 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
-        .target(name: "lua4swift", dependencies: [])
+        .target(name: "lua4swift", dependencies: [], path: "Lua")
     ]
 )
