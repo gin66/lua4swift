@@ -11,6 +11,12 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
+            name: "LuaMac",
+            targets: ["Lua"]),
+        .library(
+            name: "CLuaMac",
+            targets: ["CLua"]),
+        .library(
             name: "Lua",
             targets: ["Lua"]),
         .library(
