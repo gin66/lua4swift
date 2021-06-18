@@ -212,6 +212,10 @@ open class VirtualMachine {
             let vm = self!
             
             // check types
+            // avoid index out of range in for-loop
+            if vm.stackSize() > typeCheckers.count {
+                vm.argError("none", at: vm.stackSize()+1)
+            }
             for i in 0 ..< vm.stackSize() {
                 let typeChecker = typeCheckers[i]
                 vm.pushFromStack(i+1)
