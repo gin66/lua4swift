@@ -214,7 +214,10 @@ open class VirtualMachine {
             // check types
             // avoid index out of range in for-loop
             if vm.stackSize() > typeCheckers.count {
-                vm.argError("none", at: vm.stackSize()+1)
+                vm.argError("too many arguments", at: vm.stackSize()+1)
+            }
+            if vm.stackSize() < typeCheckers.count {
+                vm.argError("too less arguments", at: vm.stackSize()+1)
             }
             for i in 0 ..< vm.stackSize() {
                 let typeChecker = typeCheckers[i]
@@ -223,7 +226,7 @@ open class VirtualMachine {
                     vm.argError(expectedType, at: i+1)
                 }
             }
-            
+
             // build args list
             let args = Arguments()
             for _ in 0 ..< vm.stackSize() {
