@@ -63,8 +63,6 @@ open class Arguments {
     
     internal var values = [Value]()
     
-    open var value: Value { return values.remove(at: 0) }
-    
     open var string: String { return values.remove(at: 0) as! String }
     open var number: Number { return values.remove(at: 0) as! Number }
     open var boolean: Bool { return values.remove(at: 0) as! Bool }
