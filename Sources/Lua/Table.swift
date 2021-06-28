@@ -32,6 +32,14 @@ open class Table: StoredValue {
         }
     }
     
+    open func count() -> Value? {
+        push(vm)
+        lua_len(vm.vm, -1)
+        let v = vm.popValue(-1)
+        vm.pop()
+        return v
+    }
+    
     open func keys() -> [Value] {
         var k = [Value]()
         push(vm) // table
