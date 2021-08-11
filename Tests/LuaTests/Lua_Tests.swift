@@ -104,5 +104,27 @@ class Lua_Tests: XCTestCase {
         
     }
 
+    func testStackTrace() {
+        let vm = Lua.VirtualMachine()
+
+        let logPrint = vm.createFunction([String.arg]) { args in
+            let msg = args.string
+            print(msg)
+            print(vm.currentLine())
+            return .nothing
+        }
+        vm.globals["p"] = logPrint
+
+        switch vm.eval("""
+        p('hello')
+        p('world')
+        """, args: []) {
+        case let .values(values):
+            XCTAssertEqual(values.count, 0)
+        case let .error(e):
+            XCTFail(e)
+        }
+    }
     
+
 }

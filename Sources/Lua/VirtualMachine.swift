@@ -205,6 +205,14 @@ open class VirtualMachine {
             return .error(e)
         }
     }
+    
+    public func currentLine() -> Int32 {
+        var ar: lua_Debug = lua_Debug()
+        lua_getstack(vm, 1, &ar)
+        lua_getinfo(vm, "nSl", &ar);
+        let line = ar.currentline
+        return line
+    }
 
     open func createFunction(_ typeCheckers: [TypeChecker], _ fn: @escaping SwiftFunction) -> Function {
         let f: @convention(block) (OpaquePointer) -> Int32 = { [weak self] _ in
