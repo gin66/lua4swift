@@ -679,7 +679,6 @@ static int math_atan2 (lua_State *L) {
   return 1;
 }
 
-static int math_frexp (lua_State *L) {
 static int math_pow (lua_State *L) {
   lua_Number x = luaL_checknumber(L, 1);
   lua_Number y = luaL_checknumber(L, 2);
