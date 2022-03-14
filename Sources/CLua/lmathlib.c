@@ -21,6 +21,7 @@
 #include "lauxlib.h"
 #include "lualib.h"
 
+#define LUA_COMPAT_MATHLIB
 
 #undef PI
 #define PI	(l_mathop(3.141592653589793238462643383279502884))
@@ -671,6 +672,14 @@ static int math_tanh (lua_State *L) {
   return 1;
 }
 
+static int math_atan2 (lua_State *L) {
+  lua_Number x = luaL_checknumber(L, 1);
+  lua_Number y = luaL_checknumber(L, 2);
+  lua_pushnumber(L, l_mathop(atan2)(x, y));
+  return 1;
+}
+
+static int math_frexp (lua_State *L) {
 static int math_pow (lua_State *L) {
   lua_Number x = luaL_checknumber(L, 1);
   lua_Number y = luaL_checknumber(L, 2);
@@ -725,7 +734,7 @@ static const luaL_Reg mathlib[] = {
   {"tan",   math_tan},
   {"type", math_type},
 #if defined(LUA_COMPAT_MATHLIB)
-  {"atan2", math_atan},
+  {"atan2", math_atan2},
   {"cosh",   math_cosh},
   {"sinh",   math_sinh},
   {"tanh",   math_tanh},
